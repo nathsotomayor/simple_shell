@@ -1,4 +1,5 @@
 # Simple shell
+In this project we'll create a simple UNIX command interpreter in C programming language.
 
 ## Table of Contents
 * [Introduction](#Introduction)
@@ -34,11 +35,13 @@ This consists of interpreting orders. It incorporates features such as process c
  * Allowed editors: vi, vim, emacs
  * All your files will be compiled on `Ubuntu 14.04 LTS`
  * Your C programs and functions will be compiled with `gcc 4.8.4` using the flags `-Wall` `-Werror` `-Wextra` and `-pedantic`
- * Your shell should not have any memory leaks
+ * Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
+ * No more than 5 functions per file
+ * All your header files should be include guarded
+ * This shell should not have any memory leaks
  * Unless specified otherwise, your program must have the exact same output as `sh` (`/bin/sh`) as well as the exact same error output.
- * The only difference is when you print an error, the name of the program must be equivalent to your `argv[0]`
- 
- ### Allowed functions
+
+### Allowed functions
 * `access` (man 2 access)
 * `chdir` (man 2 chdir)
 * `close` (man 2 close)
@@ -70,4 +73,58 @@ This consists of interpreting orders. It incorporates features such as process c
 * `wait4` (man 2 wait4)
 * `write` (man 2 write)
 
-  
+## Documentation
+
+### Download
+You can clone this repository this way:
+`git clone https://github.com/nathsotomayor/simple_shell.git`
+
+### Compilation
+Your shell will be compiled this way:
+
+`gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+
+### Testing
+
+Your shell should work like this in interactive mode:
+
+`$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$`
+
+
+Also in non-interactive mode:
+
+`$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$`
+
+
+## Extra information
+
+### Resources
+
+**Read or watch:**
+* [Thompson shell](https://en.wikipedia.org/wiki/Thompson_shell)
+* [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson)
+
+**man or help:**
+* `sh` (Run `sh` as well)
+
+
+## Authors
+
+* [Nathaly Sotomayor Ampudia](https://github.com/nathsotomayor/)
+* [Juan Sebastián Llao](https://github.com/EckoJuan)
+* [Camilo Moncada](https://github.com/moncada92)
