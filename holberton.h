@@ -16,31 +16,26 @@ extern char **environ;
 
 
 /* Shell functions shell_functions.c*/
-	void non_interact(char **av);
+	void non_interact(char **av, int count_exe);
 	int interactive(char *av[], int count_exe, char **env);
-	char **split_buffer(char *av, char *delim);
 	int create_process(char *av[]);
 	char *_getenv(char *name);
-	void free_arg(char **arguments);
 	void print_env(char **env);
 	int child_process(char **args);
 
 /* funcions search_path path_fuctions.c*/
-	/*path_node *add_node_end(path_node **head, char *str);
-	void convert_path_to_list(path_node **head, char *current_path);*/
 	char *validate_file(char *full_path, char *file);
-	char *search_path(char *av);
-	/*void free_list(path_node **head);*/
+
 
 	/* Str functions  str_functions.c*/
 	char *_strcpy(char *dest, char *src);
 	int _strlen(const char *s);
 	char *_strcat(char *dest, char *src);
 	char *_strdup(char *str);
+
+	/* Str functions  strcmp_functions.c*/
 	int _strcmp(char *s1, char *s2);
 	int _strncmp(const char *s1, const char *s2, size_t n);
-
-	char *_strcat2(char *dest, char *src);
 
 	/* Memory allocate functions */
 	char *_memset(char *s, char b, unsigned int n);
