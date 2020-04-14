@@ -16,12 +16,12 @@ extern char **environ;
 
 
 /* Shell functions shell_functions.c*/
-	void non_interact(char **av, int count_exe);
-	int interactive(char *av[], int count_exe, char **env);
-	int create_process(char *av[]);
+	void non_interact(char **av);
+	int interactive(char *av[], int *count_exe, char **env);
+	int create_process(char *av[], int *count_exe);
 	char *_getenv(char *name);
 	void print_env(char **env);
-	int child_process(char **args);
+	int child_process(char **args, int *count_exe);
 
 /* funcions search_path path_fuctions.c*/
 	char *validate_file(char *full_path, char *file);

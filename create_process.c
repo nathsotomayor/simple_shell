@@ -7,12 +7,11 @@
  * in each postiion.
  * Return: void
  **/
-int create_process(char *av[])
+int create_process(char *av[], int *count_exe)
 {
-	int count = 1;
 	char *full_path = NULL, *full_file = NULL, error_msg[100];
 
-	sprintf(error_msg, "%s: %d: %s: not found\n", av[0], count, av[1]);
+	sprintf(error_msg, "%s: %d: %s: not found\n", av[0], *count_exe, av[1]);
 	full_path = _getenv("PATH");
 	full_file = validate_file(full_path, av[1]);
 	free(full_path);

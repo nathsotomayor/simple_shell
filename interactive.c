@@ -8,7 +8,7 @@
  * @env: Enviroment variable.
  * Return: status_exit value.
  **/
-int interactive(char *av[], int count_exe, char **env)
+int interactive(char *av[], int *count_exe, char **env)
 {
 	int interactive = 1, status_process = 0, i = 0, read = 0;
 	size_t len = 0;
@@ -44,8 +44,8 @@ int interactive(char *av[], int count_exe, char **env)
 					token = strtok(NULL, " \t\n\r");
 				} args[i] = NULL;
 				if (*args)
-					status_process = child_process(args);
-			} count_exe++;
+					status_process = child_process(args, count_exe);
+			}  (*count_exe)++;
 		}
 	} return (status_process);
 }
