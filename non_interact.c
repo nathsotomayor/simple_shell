@@ -7,13 +7,9 @@
  **/
 void non_interact(char **av)
 {
-	char *msg1 = NULL, *msg2 = NULL, *msg3 = NULL;
+	char error_msg[100];
 
-	msg1 = _strcat((av[0]) + 2,  ": 0: Can't open ");
-	msg2 = _strcat(msg1, av[1]);
-	free(msg1);
-	msg3 = _strcat(msg2, "\n");
-	free(msg2);
-	write(2, msg3, _strlen(msg3));
-	free(msg3);
+	sprintf(error_msg, "%s: 0: Can't open %s\n", av[0], av[1]);
+	write(2, error_msg, strlen(error_msg));
 }
+
