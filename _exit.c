@@ -11,31 +11,43 @@
 int e_xit(char *line, int status, char *av, int count)
 {
 	char *args[3], *tmp = NULL, *token = NULL, msg[100];
+	char a = 'a', z = 'z', upper_a = 'A', upper_z = 'Z';
+	char chr = NULL, *argum = NULL;
 	int ret = 0, i = 0;
 
 	tmp = _strdup(line);
 	free(line);
 	token = strtok(tmp, " \t\n\r");
-	for (i = 0; i < 3; i++)
+	for (i = 0; token != NULL; i++)
 	{
 		args[i] = token;
 		token = strtok(NULL, " \t\n\r");
 	}
-	if ((*args[1] >= 'a' && *args[1] <= 'z') ||
-			(*args[1] >= 'A' && *args[1] <= 'Z') || (_atoi(args[1])) < 0)
+	args[i] = NULL;
+	if (args[1] == NULL)
+	{
+		free(tmp);
+		return (status);
+	}
+	argum = _strdup(args[1]);
+	if (argum)
+		chr = *args[1];
+	if ((chr >= a && chr <= z) ||
+			(chr >= upper_a && chr <= upper_z) || (_atoi(argum)) < 0)
 	{
 		sprintf(msg, "%s: %d: exit: Illegal number: %s\n", av, count, args[1]);
 		write(2, msg, _strlen(msg));
-		free(tmp);
+		free(tmp), free(argum);
 		return (2);
 	}
-	if (args[1])
+	if (argum)
 	{
 		ret = _atoi(args[1]);
 		free(tmp);
+		free(argum);
 		return (ret);
 	}
-
+	free(argum);
 	free(tmp);
 	return (status);
 }
