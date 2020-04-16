@@ -9,9 +9,9 @@
 int e_xit(char *line, int status)
 {
 	char *args[3], *tmp, *token;
-	int asd, i;
+	int ret, i;
 
-	tmp = strdup(line);
+	tmp = _strdup(line);
 	free(line);
 	token = strtok(tmp, " \t\n\r");
 	for (i = 0; token != NULL; i++)
@@ -21,9 +21,9 @@ int e_xit(char *line, int status)
 	}
 	if (args[1])
 	{
-		asd = _atoi(args[1]);
+		ret = _atoi(args[1]);
 		free(tmp);
-		return (asd);
+		return (ret);
 	}
 
 	free(tmp);
