@@ -15,8 +15,8 @@ int main(int ac, char *av[], char **env)
 
 	if (ac > 1)
 	{
-		non_interact(av);
-		return (0);
+		status_exit = non_interact(av);
+		return (status_exit);
 	}
 	status_exit = interactive(av, count_exe, env);
 	return (status_exit);

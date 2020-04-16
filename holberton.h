@@ -13,7 +13,7 @@
 #include <errno.h>
 
 /* Shell functions shell_functions.c*/
-	void non_interact(char **av);
+	int non_interact(char **av);
 	int interactive(char *av[], int count_exe, char **env);
 	int create_process(char *av[], int count_exe, char **env);
 	char *_getenv(char *name, char **env);
