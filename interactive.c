@@ -26,7 +26,7 @@ int interactive(char *av[], int count_exe, char **env)
 		}
 		else if (_strncmp(line, "exit\n", 4) == 0)
 		{
-			ext = e_xit(line, status_process);
+			ext = e_xit(line,  status_process, av[0], count_exe);
 			return (ext);
 		}
 		else
