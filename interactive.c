@@ -32,10 +32,7 @@ int interactive(char *av[], int count_exe, char **env)
 		else
 		{
 			if (_strncmp(line, "env\n", 3) == 0)
-			{
-				status_process = print_env(env), free(line);
-				return (status_process);
-			}
+				status_process = print_env(env), count_exe++;
 			else if (read > 1)
 			{
 				token = strtok(line, " \t\n\r"), args[0] = av[0];
