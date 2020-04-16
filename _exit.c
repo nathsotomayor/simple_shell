@@ -12,7 +12,7 @@ int e_xit(char *line, int status, char *av, int count)
 {
 	char *args[3], *tmp = NULL, *token = NULL, msg[100];
 	char a = 'a', z = 'z', upper_a = 'A', upper_z = 'Z';
-	char chr = NULL, *argum = NULL;
+	char chr = 0, *argum = NULL;
 	int ret = 0, i = 0;
 
 	tmp = _strdup(line);
