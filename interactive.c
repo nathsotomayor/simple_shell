@@ -10,7 +10,7 @@
  **/
 int interactive(char *av[], int count_exe, char **env)
 {
-	int interactive = 1, status_process = 0, i = 0, read = 0;
+	int interactive = 1, status_process = 0, i = 0, read = 0, ext = 0;
 	size_t len = 0;
 	char *line = NULL, *args[32], *token = NULL;
 
@@ -26,8 +26,8 @@ int interactive(char *av[], int count_exe, char **env)
 		}
 		else if (_strncmp(line, "exit\n", 4) == 0)
 		{
-			free(line);
-			return (status_process);
+			ext = e_xit(line, status_process);
+			return (ext);
 		}
 		else
 		{

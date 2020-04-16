@@ -20,6 +20,8 @@
 	char *_getenv(char *name, char **env);
 	int print_env(char **env);
 	void _sighandler(int singint);
+	int e_xit(char *line, int status);
+	int _atoi(char *arr);
 
 /* funcions search_path path_fuctions.c*/
 	char *validate_file(char *full_path, char *file);
