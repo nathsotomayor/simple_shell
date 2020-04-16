@@ -13,6 +13,8 @@ int main(int ac, char *av[], char **env)
 	int count_exe = 1, status_exit = 0;
 	(void)ac;
 
+	signal(SIGINT, _sighandler);
+
 	if (ac > 1)
 	{
 		status_exit = non_interact(av);

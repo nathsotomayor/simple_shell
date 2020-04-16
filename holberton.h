@@ -11,6 +11,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <errno.h>
+#include <signal.h>
 
 /* Shell functions shell_functions.c*/
 	int non_interact(char **av);
@@ -18,6 +19,7 @@
 	int create_process(char *av[], int count_exe, char **env);
 	char *_getenv(char *name, char **env);
 	int print_env(char **env);
+	void _sighandler(int singint);
 
 /* funcions search_path path_fuctions.c*/
 	char *validate_file(char *full_path, char *file);
