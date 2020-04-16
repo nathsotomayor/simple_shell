@@ -5,7 +5,7 @@
  * Return: estatus_exit value;
  **/
 
-void print_env(char **env)
+int print_env(char **env)
 {
 	int i = 0;
 
@@ -14,4 +14,5 @@ void print_env(char **env)
 		write(STDOUT_FILENO, env[i], strlen(env[i]));
 		write(STDOUT_FILENO, "\n", 1);
 	}
+	return (EXIT_SUCCESS);
 }

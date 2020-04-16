@@ -17,7 +17,7 @@
 	int interactive(char *av[], int count_exe, char **env);
 	int create_process(char *av[], int count_exe, char **env);
 	char *_getenv(char *name, char **env);
-	void print_env(char **env);
+	int print_env(char **env);
 
 /* funcions search_path path_fuctions.c*/
 	char *validate_file(char *full_path, char *file);
