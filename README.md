@@ -1,3 +1,10 @@
+[![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![GitHub contributors](https://img.shields.io/github/contributors/nathsotomayor/simple_shell?style=plastic)
+
+<img src="https://miro.medium.com/max/2700/1*Nj9f2Ej5PaEp3N3k57lutg.png"
+     alt="shell_holberton_cali"
+     style="float: left; margin-right: 10px;">
+
 # Simple shell
 In this project we'll create a simple UNIX command interpreter in C programming language.
 
@@ -9,12 +16,13 @@ In this project we'll create a simple UNIX command interpreter in C programming 
     * General requirements
     * Allowed functions
 * [Documentation](#Documentation)
+    * How to download, install and compile the program from the repository
     * Description about what to do the code
     * Show flowchart
     * Explain functionalities
 * [Extra Information](#Extra-Information)
-  * How to download, install and compile the program from the repository
-  * Authors
+    * Resources
+* [Authors](#Authors)
   
   ---
   
@@ -88,17 +96,20 @@ Your shell will be compiled this way:
 
 Your shell should work like this in interactive mode:
 
-`$ ./hsh
+```
+$ ./hsh
 ($) /bin/ls
 hsh main.c shell.c
 ($)
 ($) exit
-$`
+$
+```
 
 
 Also in non-interactive mode:
 
-`$ echo "/bin/ls" | ./hsh
+```
+$ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
 $
 $ cat test_ls_2
@@ -108,7 +119,27 @@ $
 $ cat test_ls_2 | ./hsh
 hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
-$`
+$
+```
+
+### Files
+
+##|File|Description
+---|---|---
+1|[README.md](./README.md)|Readme
+2|[man_1_simple_shell](./man_1_simple_shell)|Man page Simple Shell based in sh(1) - Linux man page
+3|[main.c](./main.c)|Entry point
+4|[holberton.h](./holberton.h)|Header file
+5|[interactive.c](./interactive.c)|It runs when it receives input through the non-interactive modes ***echo*** and ***cat***, in addition to ***real-time execution***.
+6|[non_interact.c](./non_interact.c)|Error message when you receive parameters using the ***argc*** and ***argv*** arguments.
+7|[create_process.c](./create_process.c)|This function validates the existence of a file locally, and ***$PATH***, if the file exists, creates a child process that validates all its error states. Using the ***stat()*** , ***fork()*** , ***execve()*** and ***waitpid()*** functions
+8|[validate_file.c](./validate_file.c)|This function validates if a file is found in the paths of the system PATH by means of the ***stat*** system call.
+9|[_getenv.c](./_getenv.c)|This function returns a specified environment variable.
+10|[_exit.c](./_exit.c)|This function return a value especific of exit.
+11|[printf_env.c](./printf_env.c)|This function emulates the operation of the ***env*** function, printing the environment variables.
+12|[str_function.c](./str_function.c)|Auxiliary functions for handling character strings: ***strlen()*** , ***_strcat()*** , ***_strcpy()*** and ***_strdup()*** .
+13|[strcmp_function.c](./strcmp_function.c)|Auxiliary functions for character string comparison: ***_strcmp()*** and ***_strncmp()*** .
+14|[_calloc.c](./_calloc.c)|This function emulates the operation of the ***calloc()*** function. Allocate and zero-initialize array
 
 
 ## Extra information
@@ -116,6 +147,7 @@ $`
 ### Resources
 
 **Read or watch:**
+* [The Magic Behind the Command ls -l](https://medium.com/@juanllano93/the-magic-behind-the-command-ls-l-d9fd3081a3d0)
 * [Thompson shell](https://en.wikipedia.org/wiki/Thompson_shell)
 * [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson)
 
@@ -126,5 +158,9 @@ $`
 ## Authors
 
 * [Nathaly Sotomayor Ampudia](https://github.com/nathsotomayor/)
-* [Juan Sebastián Llao](https://github.com/EckoJuan)
+* [Juan Sebastián Llano](https://github.com/EckoJuan)
 * [Camilo Moncada](https://github.com/moncada92)
+
+---
+
+` Made with 💛 in Holberton School Colombia (Cali) `
