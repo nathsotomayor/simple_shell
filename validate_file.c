@@ -22,9 +22,9 @@ char *validate_file(char *full_path, char *file)
 			free(path_name);
 			return (file);
 		}
-		_strcpy(path_name, token);
-		_strcat(path_name, "/");
-		_strcat(path_name, file);
+		strcpy(path_name, token);
+		strcat(path_name, "/");
+		strcat(path_name, file);
 		if (stat(path_name, &st) == 0)
 		{
 			return (path_name);
