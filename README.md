@@ -1,5 +1,5 @@
 [![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-![GitHub contributors](https://img.shields.io/github/contributors/nathsotomayor/simple_shell?style=plastic)
+![GitHub contributors](https://img.shields.io/github/contributors/nathsotomayor/simple_shell?style=plastic)](https://github.com/nathsotomayor/simple_shell/graphs/contributors)
 
 <img src="https://miro.medium.com/max/2700/1*Nj9f2Ej5PaEp3N3k57lutg.png"
      alt="shell_holberton_cali"
@@ -16,10 +16,11 @@ In this project we'll create a simple UNIX command interpreter in C programming 
     * General requirements
     * Allowed functions
 * [Documentation](#Documentation)
-    * How to download, install and compile the program from the repository
-    * Description about what to do the code
+    * Download
+    * Compilation
+    * Testing
+    * Files
     * Show flowchart
-    * Explain functionalities
 * [Extra Information](#Extra-Information)
     * Resources
 * [Authors](#Authors)
@@ -140,6 +141,9 @@ $
 12|[str_function.c](./str_function.c)|Auxiliary functions for handling character strings: ***strlen()*** , ***_strcat()*** , ***_strcpy()*** and ***_strdup()*** .
 13|[strcmp_function.c](./strcmp_function.c)|Auxiliary functions for character string comparison: ***_strcmp()*** and ***_strncmp()*** .
 14|[_calloc.c](./_calloc.c)|This function emulates the operation of the ***calloc()*** function. Allocate and zero-initialize array
+
+### Flowchar
+[Flowchar](https://www.lucidchart.com/documents/view/4625fbe1-cebb-42da-b67d-5e6e437f4e4d)
 
 
 ## Extra information
