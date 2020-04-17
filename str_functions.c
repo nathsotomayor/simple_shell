@@ -36,6 +36,7 @@ int _strlen(const char *s)
 
 	return (i);
 }
+
 /**
  * _strcat - concatenates two strings.
  * @dest: string to destiny
@@ -65,7 +66,6 @@ char *_strcat(char *dest, char *src)
 			i++;
 		}
 	}
-	/*printf("output1 -> %s \n", output);*/
 	if (src)
 	{
 		while (i < (len1 + len2))
@@ -75,7 +75,6 @@ char *_strcat(char *dest, char *src)
 			j++;
 		}
 	}
-	/*printf("output2 -> %s \n", output);*/
 	output[i] = '\0';
 
 	return (output);
