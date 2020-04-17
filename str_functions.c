@@ -36,7 +36,6 @@ int _strlen(const char *s)
 
 	return (i);
 }
-
 /**
  * _strcat - concatenates two strings.
  * @dest: string to destiny
@@ -45,16 +44,41 @@ int _strlen(const char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-	int l_dest, i;
+	char *output = NULL;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	l_dest = _strlen(dest);
+	len1 = _strlen(dest);
+	len2 = _strlen(src);
 
-	for (i = 0; src[i] != '\0'; i++, l_dest++)
-		dest[l_dest] = src[i];
+	output = _calloc(sizeof(char), (len1 + len2 + 1));
+	if (output == NULL)
+		return (NULL);
 
-	dest[l_dest] = '\0';
+	i = 0;
+	j = 0;
 
-	return (dest);
+	if (dest)
+	{
+		while (i < len1)
+		{
+			output[i] = dest[i];
+			i++;
+		}
+	}
+	/*printf("output1 -> %s \n", output);*/
+	if (src)
+	{
+		while (i < (len1 + len2))
+		{
+			output[i] = src[j];
+			i++;
+			j++;
+		}
+	}
+	/*printf("output2 -> %s \n", output);*/
+	output[i] = '\0';
+
+	return (output);
 }
 
 /**
@@ -70,18 +94,22 @@ char *_strdup(char *str)
 	char *s;
 
 	if (!str)
+	{
 		return (NULL);
+	}
 
 	l = _strlen(str) + 1;
-	s = _calloc(l, sizeof(char));
 
+	s = _calloc(l, sizeof(char));
 	if (!s)
+	{
 		return (NULL);
+
+	}
 
 	for (j = 0; j < l; j++)
 	{
 		s[j] = str[j];
 	}
-	s[j] = '\0';
 	return (s);
 }
